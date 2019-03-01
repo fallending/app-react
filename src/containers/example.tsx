@@ -25,5 +25,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps,
   mergeProps)(Example);
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Example);

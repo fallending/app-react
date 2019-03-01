@@ -4,7 +4,6 @@ import { INCREMENT, DECREMENT } from '../constants';
 import initState from '../store/init-state';
 import { combineReducers } from 'redux';
 
-// reducer
 /**
  * ExampleState 对应的 reducer
  * @param state 
@@ -13,6 +12,8 @@ import { combineReducers } from 'redux';
 function exampleReducer(state: ExampleState = initState.example, action: ExampleActions): ExampleState {
   switch (action.type) {
     case INCREMENT:
+      console.log('ddddddddddddd')
+
       return { ...state, level: state.level + 1 };
     case DECREMENT:
       return { ...state, level: Math.max(1, state.level - 1) };
