@@ -1,11 +1,16 @@
 import { ExampleActions } from '../actions';
-import { StoreState } from '../types';
+import { AppState, ExampleState } from '../types';
 import { INCREMENT, DECREMENT } from '../constants';
 import initState from '../store/init-state';
 import { combineReducers } from 'redux';
 
-// 这是其中一个reducer
-function enthusiasm(state: StoreState = initState, action: ExampleActions): StoreState {
+// reducer
+/**
+ * ExampleState 对应的 reducer
+ * @param state 
+ * @param action 
+ */
+function exampleReducer(state: ExampleState = initState.example, action: ExampleActions): ExampleState {
   switch (action.type) {
     case INCREMENT:
       return { ...state, level: state.level + 1 };
@@ -15,8 +20,8 @@ function enthusiasm(state: StoreState = initState, action: ExampleActions): Stor
   return state;
 }
 
-const rootReducer = combineReducers<StoreState>({
-  enthusiasm
+const rootReducer = combineReducers<AppState>({
+  example: exampleReducer
 });
 
 export default rootReducer;

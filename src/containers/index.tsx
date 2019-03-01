@@ -1,9 +1,9 @@
 import Example from '../components/example';
 import * as actions from '../actions';
-import { StoreState } from '../types';
+import { AppState } from '../types';
 import { connect, Dispatch } from 'react-redux';
 
-export function mapStateToProps( { level, languageName } : StoreState) {
+export function mapStateToProps( { example: { level, languageName } } : AppState) {
   return {
     level,
     name: languageName,

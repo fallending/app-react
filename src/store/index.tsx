@@ -1,10 +1,10 @@
 
 import { createStore } from 'redux';
 import reducers from '../reducers';
-import { StoreState } from '../types';
+import { AppState, ExampleState } from '../types';
 import initState from './init-state';
 
 export default function () {
-  const store = createStore<StoreState>(reducers, initState);
+  const store = createStore<AppState>(reducers, initState);
   return store;
 }
