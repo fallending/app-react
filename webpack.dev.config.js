@@ -139,6 +139,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin() // 热更新插件
   ],
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".json"] //后缀名自动补全
+    extensions: [".ts", ".tsx", ".js", ".json"], //后缀名自动补全
+    alias: {
+      '@': path.resolve(__dirname, './src')
+    }
   }
 };

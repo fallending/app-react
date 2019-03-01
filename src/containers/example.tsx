@@ -1,5 +1,5 @@
-import Example from '../components/example';
-import * as actions from '../actions';
+import Example from '@/components/example';
+import * as actions from '@/actions';
 import { AppState } from '../types';
 import { connect, Dispatch } from 'react-redux';
 

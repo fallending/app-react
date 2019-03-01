@@ -155,7 +155,7 @@ npm i -S react-router-redux @types/react-router-redux
 
 ## 其他
 
-> 相对路径
+> 相对路径 1
 
 webpack 配置将 src 目录配置在了 resolve 中
 
@@ -192,6 +192,34 @@ webpack 配置将 src 目录配置在了 resolve 中
 ```
 
 二者略有[不同](https://www.typescriptlang.org/docs/handbook/module-resolution.html#base-url). 从结论上看 paths 的方式会检测加载模块关联的声明, 对于声明缺失的模块编译时会抛出一个错误.
+
+> 相对路径 2
+
+代码中, 可以通过 `import ‘App’ from ‘@/components/App’ 的方式引用 src/components/App.jsx 文件
+
+tsconfig.json
+```
+"compilerOptions": {
+  "typeRoots": [
+    "node_modules/@types"
+  ],
+
+  "baseUrl": ".",
+  "paths": {
+    "@/*": [ "./src/*" ]
+  }
+}
+```
+
+webpack.xx.js
+```
+resolve: {
+  extensions: [".ts", ".tsx", ".js", ".json"], //后缀名自动补全
+  alias: {
+    '@': path.resolve(__dirname, './src')
+  }
+}
+```
 
 > 全局参数
 

@@ -22,7 +22,7 @@ import './styles/common.less';
 
 // Render Example With Redux
 import configureStore from './store';
-import Example from './containers';
+import Example from './containers/example';
 
 const store = configureStore();
 ReactDOM.render(
