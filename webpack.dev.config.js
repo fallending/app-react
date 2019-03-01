@@ -7,32 +7,31 @@ const HtmlWebpackPlugin = require("html-webpack-plugin"); // 动态生成html插
 module.exports = {
   mode: "development",
   entry: [
-    "webpack-hot-middleware/client?reload=true&path=/__webpack_hmr", // webpack热更新插件，就这么写
-    "./src/index.js" // 项目入口
+    // "webpack-hot-middleware/client?reload=true&path=/__webpack_hmr", // webpack热更新插件
+    "./src/index.tsx" // 项目入口
   ],
   output: {
-    path: "/", // 将打包好的文件放在此路径下，dev模式中，只会在内存中存在，不会真正的打包到此路径
-    publicPath: "/", // 文件解析路径，index.html中引用的路径会被设置为相对于此路径
+    path:  __dirname + "/", // 将打包好的文件放在此路径下，dev模式中，只会在内存中存在，不会真正的打包到此路径
+    publicPath: __dirname + "/", // 文件解析路径，index.html中引用的路径会被设置为相对于此路径
     filename: "bundle.js" //编译后的文件名字
   },
   devtool: "inline-source-map", // 报错的时候在控制台输出哪一行报错
+
   context: __dirname, // entry 和 module.rules.loader 选项相对于此目录开始解析
-  watchOptions: {
-    ignored: /node_modules/
-  },
+
   module: {
     rules: [
+      // WARNING: now
+      { test: /\.tsx?$/, loader: "ts-loader" },
+
+      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+
+      // WARNING: origin
       {
         // 编译前通过eslint检查代码 (注释掉即可取消eslint检测)
         test: /\.js?$/,
         enforce: "pre",
         use: ["eslint-loader"],
-        include: path.resolve(__dirname, "src")
-      },
-      {
-        // .js .jsx用babel解析
-        test: /\.js?$/,
-        use: ["babel-loader"],
         include: path.resolve(__dirname, "src")
       },
       {
@@ -137,6 +136,6 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin() // 热更新插件
   ],
   resolve: {
-    extensions: [".js", ".jsx", ".less", ".css", ".scss"] //后缀名自动补全
+    extensions: [".ts", ".tsx", ".js", ".json"] //后缀名自动补全
   }
 };

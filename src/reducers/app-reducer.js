@@ -1,4 +1,4 @@
-/** app-reducer **/
+import * as constants from '../constants';
 
 /** store中的初始值 **/
 const initState = {
