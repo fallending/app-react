@@ -25,28 +25,3 @@ export const serverLogin = (params = {}) => async dispatch => {
     console.error("网络错误，请重试");
   }
 };
-
-
-import * as constants from '../constants'
-
-export interface AppAdd {
-  type: constants.APP_ADD;
-}
-
-export interface AppLogin {
-  type: constants.DECREMENT_ENTHUSIASM;
-}
-
-export type AppAction = Add | Login;
-
-export function incrementEnthusiasm(): AppAdd {
-  return {
-    type: constants.APP_ADD
-  }
-}
-
-export function decrementEnthusiasm(): AppLogin {
-  return {
-    type: constants.APP_LOGIN
-  }
-}

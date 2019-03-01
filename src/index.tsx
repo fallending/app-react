@@ -17,30 +17,39 @@
  */
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-
 import { Provider } from 'react-redux';
 import './styles/common.less';
-import Root from "./containers/root";
-
-/** 数据中心 **/
-import store from './store';
-
-const rootDom = document.getElementById('root');
 
 // Render Example
 
 // import Example from './components/example';
 // ReactDOM.render(
-//   <Example name="TypeScript" enthusiasmLevel={10} />,
+//   <Example name="TypeScript" level={10} />,
 //   document.getElementById('root') as HTMLElement
 // );
 
+// Render Example With Redux
+import configureStore from './store/example';
+import Example from './containers/example';
+
+const store = configureStore();
 ReactDOM.render(
   <Provider store={store}>
-    <Root />
+    <Example />
   </Provider>,
-  rootDom
+  document.getElementById('root') as HTMLElement
 );
+
+// Render Origin
+
+// import Root from "./containers/root";
+
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <Root />
+//   </Provider>,
+//   document.getElementById('root') as HTMLElement
+// );
 
 // if (module.hot) {
 //   module.hot.accept();

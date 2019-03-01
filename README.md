@@ -135,10 +135,22 @@ webpack --config webpack.common.config.js
 
 接着，省略开发、生产环境的配置文件编写
 
-## in redux
+## import [react-redux](https://www.redux.org.cn/docs/react-redux/)
 
 ```
 npm i -S redux react-redux @types/react-redux
+```
+
+## import [react-router](https://reacttraining.com/react-router/web/example/basic)
+
+```
+npm i -S react-router @types/react-router
+```
+
+## import react-router-redux
+
+```
+npm i -S react-router-redux @types/react-router-redux
 ```
 
 ## 其他
