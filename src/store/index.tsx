@@ -1,7 +1,7 @@
 
 import { createStore } from 'redux';
-import reducers from '../reducers/example';
-import { StoreState } from '../types/example';
+import reducers from '../reducers';
+import { StoreState } from '../types';
 import initState from './init-state';
 
 export default function () {

@@ -20,17 +20,9 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import './styles/common.less';
 
-// Render Example
-
-// import Example from './components/example';
-// ReactDOM.render(
-//   <Example name="TypeScript" level={10} />,
-//   document.getElementById('root') as HTMLElement
-// );
-
 // Render Example With Redux
-import configureStore from './store/example';
-import Example from './containers/example';
+import configureStore from './store';
+import Example from './containers';
 
 const store = configureStore();
 ReactDOM.render(
@@ -39,18 +31,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root') as HTMLElement
 );
-
-// Render Origin
-
-// import Root from "./containers/root";
-
-// ReactDOM.render(
-//   <Provider store={store}>
-//     <Root />
-//   </Provider>,
-//   document.getElementById('root') as HTMLElement
-// );
-
-// if (module.hot) {
-//   module.hot.accept();
-// }

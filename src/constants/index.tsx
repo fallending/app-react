@@ -1,7 +1,5 @@
+export const INCREMENT = 'INCREMENT';
+export type INCREMENT = typeof INCREMENT;
 
-export const APP_ADD = 'app::add';
-export type APP_ADD = typeof APP_ADD;
-
-
-export const APP_LOGIN = 'app::login';
-export type APP_LOGIN = typeof APP_LOGIN;
+export const DECREMENT = 'DECREMENT';
+export type DECREMENT = typeof DECREMENT;

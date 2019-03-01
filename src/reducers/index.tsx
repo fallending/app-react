@@ -1,6 +1,6 @@
-import { ExampleActions } from '../actions/example';
-import { StoreState } from '../types/example';
-import { INCREMENT, DECREMENT } from '../constants/example';
+import { ExampleActions } from '../actions';
+import { StoreState } from '../types';
+import { INCREMENT, DECREMENT } from '../constants';
 import initState from '../store/init-state';
 import { combineReducers } from 'redux';
 

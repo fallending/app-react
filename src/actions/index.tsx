@@ -1,4 +1,4 @@
-import * as constants from '../constants/example'
+import * as constants from '../constants'
 
 export interface IncrementAction {
   type: constants.INCREMENT;
