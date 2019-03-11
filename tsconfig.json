@@ -1,13 +1,21 @@
 {
   "compilerOptions": {
-    "noImplicitAny": false,
-    "noEmitOnError": true,
-    "removeComments": false,
+    "jsx": "react",
     "sourceMap": true,
     "target": "es5",
-    "module": "commonjs",
-    "jsx": "react",
-    "outDir": "./dist/",
+    // "module": "commonjs",
+    "module": "es6",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "declaration": false,
+    "removeComments": true,
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "strict": true,
+    
+    "outDir": "dist",
     "lib": [
       "dom",
       "es6",
@@ -27,6 +35,6 @@
     "src/**/*"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules", "dist"
   ]
 }

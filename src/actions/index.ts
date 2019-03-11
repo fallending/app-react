@@ -21,3 +21,5 @@ export function decrement(): DecrementAction {
     type: constants.DECREMENT
   }
 }
+
+export * from './todos';
